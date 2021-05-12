@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>S3_Lletres_N1</title>
+  </head>
+  <body>
+    <script>
+      //  EXERCICI 1
+      const nom = ["J", "O", "O", "E", "L", "J"];
+      /*for (lletra of nom) {
+        console.log(lletra);
+      }
+
+      //  EXERCICI 2
+      for (lletra of nom) {
+        if (!isNaN(lletra)) {
+          console.log(`Els noms de persona no contenen el número ${lletra}`);
+        } else {
+          if (
+            lletra == "a" ||
+            lletra == "e" ||
+            lletra == "i" ||
+            lletra == "o" ||
+            lletra == "u"
+          ) {
+            console.log(`He trobat la VOCAL: ${lletra}`);
+          } else {
+            console.log(`He trobat la CONSONANT: ${lletra}`);
+          }
+        }
+      }*/
+
+      //  EXERCICI 3
+
+      const mapa = new Map();
+
+      for (lletra of nom) {
+        mapa.set(lletra, 1);
+        for (let k of mapa.keys()) {
+          if (lletra === k) {
+            mapa.set(k) + 1;
+            console.log("Repito!");
+          }
+        }
+      }
+
+      console.log(mapa);
+    </script>
+  </body>
+</html>
