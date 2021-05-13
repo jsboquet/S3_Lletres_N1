@@ -9,8 +9,8 @@
   <body>
     <script>
       //  EXERCICI 1
-      const nom = ["J", "O", "O", "E", "L", "J"];
-      /*for (lletra of nom) {
+      const nom = ["J", "O", "E", "L"];
+      for (lletra of nom) {
         console.log(lletra);
       }
 
@@ -20,34 +20,63 @@
           console.log(`Els noms de persona no contenen el número ${lletra}`);
         } else {
           if (
-            lletra == "a" ||
-            lletra == "e" ||
-            lletra == "i" ||
-            lletra == "o" ||
-            lletra == "u"
+            lletra.toLowerCase() == "a" ||
+            lletra.toLowerCase() == "e" ||
+            lletra.toLowerCase() == "i" ||
+            lletra.toLowerCase() == "o" ||
+            lletra.toLowerCase() == "u"
           ) {
             console.log(`He trobat la VOCAL: ${lletra}`);
           } else {
             console.log(`He trobat la CONSONANT: ${lletra}`);
           }
         }
-      }*/
+      }
 
       //  EXERCICI 3
+      const objecteNom = {};
 
-      const mapa = new Map();
-
-      for (lletra of nom) {
-        mapa.set(lletra, 1);
-        for (let k of mapa.keys()) {
-          if (lletra === k) {
-            mapa.set(k) + 1;
-            console.log("Repito!");
-          }
+      for (const lletra of nom) {
+        if (lletra in objecteNom) {
+          objecteNom[lletra] += 1;
+        } else {
+          objecteNom[lletra] = 1;
         }
       }
 
-      console.log(mapa);
+      console.log(objecteNom);
+
+      // No he aconseguit fer-ho amb el "map", m'agradaria que m'expliquessis com fer-ho si et sembla
+
+      //  const mapaNom = new Map();
+      //  for (const lletra of nom) {
+      //     if (mapaNom.has(lletra)) {
+      //     mapaNom.set(lletra, 2);
+      //     console.log("it has it");
+      //   } else {
+      //     mapaNom.set(lletra, 1);
+      //   }
+      //  }
+
+      //  EXERCICI 4
+
+      const surname = [
+        "S",
+        "A",
+        "N",
+        "T",
+        "A",
+        "E",
+        "U",
+        "L",
+        "A",
+        "R",
+        "I",
+        "A",
+      ];
+
+      const fullName = nom.concat(" ", surname);
+      console.log(fullName);
     </script>
   </body>
 </html>
